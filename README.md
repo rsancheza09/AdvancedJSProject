@@ -1,2 +1,2 @@
-AdvancedJSExc1
+AdvancedJSProject
 ==============
