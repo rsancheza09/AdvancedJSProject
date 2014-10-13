@@ -8,6 +8,7 @@
 (function (global) {
     var document = global.document;
     var $;
+    var console = global.console;
 
     var selfclosing = /^(abbr|br|col|img|input|link|meta|param|hr|area|embed)$/i;
 
@@ -33,6 +34,9 @@
         // Handle $(#id)
         if (param.charAt(0) === '#') {
             this.el = document.getElementById(param.replace('#', ''));
+        // Handle $(.class)
+        } else if (param.charAt(0) === '.') {
+            this.el = document.getElementsByClassName(param.replace('.', ''));
         }
     };
 
@@ -91,7 +95,7 @@
             result = true;
         }
         return result;
-    }
+    };
 
     $.each = function (obj, callback) {
         if ($.isArray(obj)) {
