@@ -121,8 +121,9 @@
 
     $.inArray = function (arg, obj, index) {
         var result = -1;
+        var i = index || 0;
         if ($.isArray(obj)) {
-            for (var i = index; i < obj.length; i++) {
+            for (i; i < obj.length; i++) {
                 if (obj[i] === arg) {
                     result = i;
                 }
